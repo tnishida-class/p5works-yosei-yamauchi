@@ -10,9 +10,13 @@ function setup(){
 }
 
 function draw(){
-  background(160, 192, 255);
+  background(47,79,79);
   // BLANK[2] (hint: 作った star 関数を使います)
-
+  noStroke();
+  fill(255, 215, 0);
+  star(x, y, 30);
+  x += vx
+  y += vy
   // 端の処理パターン (1) 反対側から出てくる
   if(x > width){ x = 0; }
   else if(x < 0){ x = width; }
