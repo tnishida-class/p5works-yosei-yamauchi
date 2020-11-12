@@ -1,5 +1,5 @@
 // テキスト「アニメーション」
-let x, y, vx, vy;
+let x, y, vx, vy, angle;
 
 function setup(){
   createCanvas(windowWidth, windowHeight);
@@ -7,6 +7,7 @@ function setup(){
   y = height / 2;
   vx = 8;
   vy = 8;
+  angle = 0;
 }
 
 function draw(){
@@ -14,7 +15,8 @@ function draw(){
   // BLANK[2] (hint: 作った star 関数を使います)
   noStroke();
   fill(255, 215, 0);
-  star(x, y, 30);
+  star(x, y, 30, angle);
+  angle += 0.1
   x += vx
   y += vy
   // 端の処理パターン (1) 反対側から出てくる
@@ -27,7 +29,7 @@ function draw(){
 function star(cx, cy, r, angle){
   beginShape();
   for(var i = 0; i < 20; i++){
-    var theta = TWO_PI * i * 2 / 5 - HALF_PI;
+    var theta = TWO_PI * i * 2 / 5 - HALF_PI + angle;
     // BLANK[1] (hint: angle 分だけ星を回転させるには？)
     var x = cx + cos(theta) * r;
     var y = cy + sin(theta) * r;
@@ -38,4 +40,14 @@ function star(cx, cy, r, angle){
 
 function windowResized(){
   resizeCanvas(windowWidth, windowHeight);
+}
+
+function keyPressed(){ //間違えて「スペース押したら最初の位置」という関数作ってしまってので、一応置いときます
+  if(key == " "){
+    return setup();}
+}
+
+function mousePressed(){
+  x = mouseX;
+  y = mouseY;
 }
