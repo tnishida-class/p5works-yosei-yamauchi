@@ -20,6 +20,11 @@ function sum(arr){
 
 //　テキスト「配列と繰り返し」練習問題
 function average(arr){
+  let n = 0
+  for(let i = 0; i < arr.length; i++){
+    n += scores[];
+    n % arr.length;
+  }
   // BLANK[1]
 }
 
