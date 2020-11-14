@@ -53,6 +53,10 @@ function smallest(arr){
 // テキスト「配列を使った描画」棒グラフ
 function barchart(scores){
   scaleY(10);
+  a = largest(scores);
+  b = smallest(scores);
+  c = average(scores);
+
   // BLANK[4] (hint: largest, smallest, average を使って先にそれぞれの値を計算しておきます)
 
   noStroke();
@@ -60,10 +64,24 @@ function barchart(scores){
   for(let i = 0; i < scores.length; i++){
     const dx = width / scores.length;
     const h = height * scores[i] / 100;
+    if(scores[i] = a){
+      fill(255, 0, 0);
+    }
+    else if(scores[i] = b){
+      fill(o, o, 255);
+    }
+    else{
+      fill(0);
+    }
+      // BLANK[5] (hint: 棒グラフの色を変える)
     rect(i * dx + 2, height - h, dx - 4, h);
     fill(0);
     text(scores[i].toPrecision(3), i * dx, height - h);
   }
+  fill(255, 204, 0);
+  line(0, height - c, width, height- c);
+  fill(0);
+  text(c.toPrecision(3), 0, height - c);
 
   // BLANK[6] (hint: 平均点の線を引きます)
 }
