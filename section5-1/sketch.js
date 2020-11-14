@@ -22,15 +22,18 @@ function sum(arr){
 function average(arr){
   let n = 0
   for(let i = 0; i < arr.length; i++){
-    n += scores[];
-    n % arr.length;
+    n += scores[i];
   }
+  return n / arr.length;
   // BLANK[1]
 }
 
 function largest(arr){
   let n = 0;
   for(let i = 0; i < arr.length; i++){
+    if(n < arr[i]){
+      arr[i] = n;
+    }
     // BLANK[2]
   }
   return n;
@@ -39,6 +42,9 @@ function largest(arr){
 function smallest(arr){
   let n = 100;
   for(let i = 0; i < arr.length; i++){
+    if(n > arr[i]){
+      arr[i] = n;
+    }
     // BLANK[3]
   }
   return n;
@@ -54,7 +60,6 @@ function barchart(scores){
   for(let i = 0; i < scores.length; i++){
     const dx = width / scores.length;
     const h = height * scores[i] / 100;
-    // BLANK[5] (hint: 条件分岐を使って色を変更します)
     rect(i * dx + 2, height - h, dx - 4, h);
     fill(0);
     text(scores[i].toPrecision(3), i * dx, height - h);
