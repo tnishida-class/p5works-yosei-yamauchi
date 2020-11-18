@@ -1,5 +1,5 @@
 // 最終課題を制作しよう
-let size1, size2, size3, size4;
+let size1, size2;
 let x, y;
 
 function setup(){
@@ -7,8 +7,6 @@ function setup(){
   background(0, 0, 205);
   size1 = 20;
   size2 = 10;
-  size3 = 10;
-  size4 = 0;
   x = random(0, windowWidth - 70);
   y = random(70, windowHeight);
 }
@@ -20,23 +18,27 @@ function draw(){
   pochapocha();
   size1 += 1;
   if(size1 < 100){
-  noStroke();
-  fill(255);
+  stroke(255);
+  strokeWeight(6);
+  fill(0, 0, 205);
   ellipse(x, y, size1);
   }
   else if(size1 < 125){
-    noStroke();
-    fill(0, 191, 255);
+    stroke(0, 191, 255);
+    strokeWeight(6);
+    fill(0, 0, 205);
     ellipse(x, y, size1);
   }
   else if(size1 < 150){
-    noStroke();
-    fill(0, 206, 209);
+    stroke(0, 206, 209);
+    strokeWeight(6);
+    fill(0, 0, 205);
     ellipse(x, y, size1);
   }
   else if(size1 < 175){
-    noStroke();
-    fill(0, 0, 255);
+    stroke(0, 0, 255);
+    strokeWeight(6);
+    fill(0, 0, 205);
     ellipse(x, y, size1);
   }
   else{
@@ -45,46 +47,38 @@ function draw(){
     ellipse(x, y, size1);
   }
 
-  size2 += 1
-  noStroke();
+  size2 += 0.5;
+  if(size2 < 50){
+  stroke(255);
+  strokeWeight(6);
   fill(0, 0, 205);
   ellipse(x, y, size2);
-
-
-  size3 += 0.5;
-  if(size3 < 50){
-  noStroke();
-  fill(255);
-  ellipse(x, y, size3);
   }
-  else if(size3 < 62.5){
-    noStroke();
-    fill(0, 191, 255);
-    ellipse(x, y, size3);
+  else if(size2 < 62.5){
+    stroke(0, 191, 255);
+    strokeWeight(6);
+    fill(0, 0, 205);
+    ellipse(x, y, size2);
   }
-  else if(size3 < 75){
-    noStroke();
-    fill(0, 206, 209);
-    ellipse(x, y, size3);
+  else if(size2 < 75){
+    stroke(0, 206, 209);
+    strokeWeight(6);
+    fill(0, 0, 205);
+    ellipse(x, y, size2);
   }
-  else if(size3 < 87.5){
-    noStroke();
-    fill(0, 0, 255);
-    ellipse(x, y, size3);
+  else if(size2 < 87.5){
+    stroke(0, 0, 255);
+    strokeWeight(6);
+    fill(0, 0, 205);
+    ellipse(x, y, size2);
   }
   else{
     noStroke();
     fill(0, 0, 205);
-    ellipse(x, y, size3);
+    ellipse(x, y, size2);
   }
 
-  size4 += 0.5
-  noStroke();
-  fill(0, 0, 205);
-  ellipse(x, y, size4);
-
-
-if(size1 > 200 && size2 > 200 && size3 > 100 && size4 > 100){
+if(size1 > 200 && size2 > 100){
   noLoop();
 }
 }
@@ -92,8 +86,6 @@ if(size1 > 200 && size2 > 200 && size3 > 100 && size4 > 100){
 function mouseClicked(){
   size1 = 20;
   size2 = 10;
-  size3 = 10;
-  size4 = 0;
   x = mouseX;
   y = mouseY;
   loop();
@@ -110,6 +102,7 @@ function keyPressed(){ //間違えて「スペース押したら最初の位置�
 
 function pochapocha(){
   textSize(15);
+  noStroke();
   fill(0, 206, 209);
   text("ポチャ…", x + 10, y - 30);
 }
