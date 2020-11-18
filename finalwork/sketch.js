@@ -90,6 +90,7 @@ const s = {
 
 }
 
+
 function keyPressed(){
   if(key == " "){
 for( let i = 0; i < 10; i++){
