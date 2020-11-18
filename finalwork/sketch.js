@@ -88,6 +88,7 @@ function mouseClicked(){
   size1: 20,
   size2: 10
   }
+  scores.push(s);
 }
 
 
