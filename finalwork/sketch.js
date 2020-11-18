@@ -1,103 +1,106 @@
 // 最終課題を制作しよう
-let size1, size2;
-let x, y;
+let scores;
 
 function setup(){
   createCanvas(windowWidth, windowHeight);
   background(0, 0, 205);
-  size1 = 20;
-  size2 = 10;
-  x = random(0, windowWidth - 70);
-  y = random(70, windowHeight);
+  scores = [];
 }
 
 
 
 function draw(){
   background(0, 0, 205);
+for(let i = 0; i < scores.length; i++){
+  let s = scores[i];
   pochapocha();
-  size1 += 1;
-  if(size1 < 75){
+  s.size1 += 1;
+  if(s.size1 < 75){
   stroke(255);
   strokeWeight(6);
   fill(0, 0, 205);
-  ellipse(x, y, size1);
+  ellipse(s.x, s.y, s.size1);
   }
-  else if(size1 < 100){
+  else if(s.size1 < 100){
     stroke(0, 191, 255);
     strokeWeight(6);
     fill(0, 0, 205);
-    ellipse(x, y, size1);
+    ellipse(s.x, s.y, s.size1);
   }
-  else if(size1 < 125){
+  else if(s.size1 < 125){
     stroke(0, 206, 209);
     strokeWeight(6);
     fill(0, 0, 205);
-    ellipse(x, y, size1);
+    ellipse(s.x, s.y, s.size1);
   }
-  else if(size1 < 150){
+  else if(s.size1 < 150){
     stroke(0, 0, 255);
     strokeWeight(6);
     fill(0, 0, 205);
-    ellipse(x, y, size1);
+    ellipse(s.x, s.y, s.size1);
   }
   else{
     noStroke();
     fill(0, 0, 205);
-    ellipse(x, y, size1);
+    ellipse(s.x, s.y, s.size1);
   }
 
-  size2 += 0.5;
-  if(size2 < 37.5){
+  s.size2 += 0.5;
+  if(s.size2 < 37.5){
   stroke(255);
   strokeWeight(6);
   fill(0, 0, 205);
-  ellipse(x, y, size2);
+  ellipse(s.x, s.y, s.size2);
   }
-  else if(size2 < 50){
+  else if(s.size2 < 50){
     stroke(0, 191, 255);
     strokeWeight(6);
     fill(0, 0, 205);
-    ellipse(x, y, size2);
+    ellipse(s.x, s.y, s.size2);
   }
-  else if(size2 < 62.5){
+  else if(s.size2 < 62.5){
     stroke(0, 206, 209);
     strokeWeight(6);
     fill(0, 0, 205);
-    ellipse(x, y, size2);
+    ellipse(s.x, s.y, s.size2);
   }
-  else if(size2 < 75){
+  else if(s.size2 < 75){
     stroke(0, 0, 255);
     strokeWeight(6);
     fill(0, 0, 205);
-    ellipse(x, y, size2);
+    ellipse(s.x, s.y, s.size2);
   }
   else{
     noStroke();
     fill(0, 0, 205);
-    ellipse(x, y, size2);
+    ellipse(s.x, s.y, s.size2);
   }
 
-if(size1 > 175 && size2 > 87.5){
-  noLoop();
 
-}
+ }
 }
 
 function mouseClicked(){
-  size1 = 20;
-  size2 = 10;
-  x = mouseX;
-  y = mouseY;
-  loop();
-  draw();
+const s = {
+  x: mouseX,
+  y: mouseY,
+  size1: 20,
+  size2: 10
+}
+
 }
 
 function keyPressed(){
   if(key == " "){
-    return setup();
-    loop();
-    redraw();
+for( let i = 0; i < 10; i++){
+  const s = {
+    x: random(0, windowWidth - 70),
+    y: random(70, windowHeight),
+    size1: 20,
+    size2: 10
+    }
+  scores.push(s);
+  }
   }
 }
 
