@@ -17,25 +17,25 @@ function draw(){
   background(0, 0, 205);
   pochapocha();
   size1 += 1;
-  if(size1 < 100){
+  if(size1 < 75){
   stroke(255);
   strokeWeight(6);
   fill(0, 0, 205);
   ellipse(x, y, size1);
   }
-  else if(size1 < 125){
+  else if(size1 < 100){
     stroke(0, 191, 255);
     strokeWeight(6);
     fill(0, 0, 205);
     ellipse(x, y, size1);
   }
-  else if(size1 < 150){
+  else if(size1 < 125){
     stroke(0, 206, 209);
     strokeWeight(6);
     fill(0, 0, 205);
     ellipse(x, y, size1);
   }
-  else if(size1 < 175){
+  else if(size1 < 150){
     stroke(0, 0, 255);
     strokeWeight(6);
     fill(0, 0, 205);
@@ -48,25 +48,25 @@ function draw(){
   }
 
   size2 += 0.5;
-  if(size2 < 50){
+  if(size2 < 37.5){
   stroke(255);
   strokeWeight(6);
   fill(0, 0, 205);
   ellipse(x, y, size2);
   }
-  else if(size2 < 62.5){
+  else if(size2 < 50){
     stroke(0, 191, 255);
     strokeWeight(6);
     fill(0, 0, 205);
     ellipse(x, y, size2);
   }
-  else if(size2 < 75){
+  else if(size2 < 62.5){
     stroke(0, 206, 209);
     strokeWeight(6);
     fill(0, 0, 205);
     ellipse(x, y, size2);
   }
-  else if(size2 < 87.5){
+  else if(size2 < 75){
     stroke(0, 0, 255);
     strokeWeight(6);
     fill(0, 0, 205);
@@ -78,8 +78,9 @@ function draw(){
     ellipse(x, y, size2);
   }
 
-if(size1 > 200 && size2 > 100){
+if(size1 > 175 && size2 > 87.5){
   noLoop();
+
 }
 }
 
@@ -92,7 +93,7 @@ function mouseClicked(){
   draw();
 }
 
-function keyPressed(){ //間違えて「スペース押したら最初の位置」という関数作ってしまってので、一応置いときます
+function keyPressed(){
   if(key == " "){
     return setup();
     loop();
