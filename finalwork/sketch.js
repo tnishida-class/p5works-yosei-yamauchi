@@ -13,6 +13,7 @@ function draw(){
   background(0, 0, 205);
 for(let i = 0; i < scores.length; i++){
   let s = scores[i];
+  flog();
   textSize(15);
   noStroke();
   fill(0, 206, 209);
@@ -91,6 +92,24 @@ function mouseClicked(){
   scores.push(s);
 }
 
+function flog(){
+  noStroke();
+  fill(0, 255, 153);
+  ellipse(60, 100 ,70, 50);
+  noStroke();
+  fill(0, 255, 153);
+  ellipse(40, 80, 25, 45);
+  noStroke();
+  fill(0, 255, 153);
+  ellipse(80, 80, 25, 45);
+  fill(0);
+  ellipse(40, 75, 13, 13);
+  fill(0);
+  ellipse(80, 75, 13, 13);
+  noStroke();
+  fill(255);
+  arc(60, 105, 30, 20, 0, PI, OPEN);
+}
 
 function keyPressed(){
   if(key == " "){
