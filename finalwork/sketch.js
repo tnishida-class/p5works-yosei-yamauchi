@@ -13,7 +13,6 @@ function draw(){
   background(0, 0, 205);
 for(let i = 0; i < scores.length; i++){
   let s = scores[i];
-  flog();
   textSize(15);
   noStroke();
   fill(0, 206, 209);
@@ -79,6 +78,7 @@ for(let i = 0; i < scores.length; i++){
     fill(0, 0, 205);
     ellipse(s.x, s.y, s.size2);
   }
+    flog();
  }
 }
 
