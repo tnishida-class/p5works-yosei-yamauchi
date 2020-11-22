@@ -16,7 +16,7 @@ for(let i = 0; i < scores.length; i++){
   textSize(15);
   noStroke();
   fill(0, 206, 209);
-  text("ポチャ…", s.x + 10, s.y - 30)
+  text(s.t, s.x + 10, s.y - 30)
   s.size1 += 1;
   if(s.size1 < 75){
   stroke(255);
@@ -87,7 +87,8 @@ function mouseClicked(){
   x: mouseX,
   y: mouseY,
   size1: 20,
-  size2: 10
+  size2: 10,
+  t: "　　凪"
   }
   scores.push(s);
 }
@@ -118,7 +119,8 @@ function keyPressed(){
      x: random(0, windowWidth - 70),
      y: random(70, windowHeight),
      size1: 20,
-     size2: 10
+     size2: 10,
+     t:"ポチャ…"
      }
     scores.push(s);
     }
